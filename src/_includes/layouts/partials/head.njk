@@ -22,9 +22,9 @@
   <link rel="manifest" href="{{ '/manifest.json' | url }}"/>
 
   <!-- Styles -->
-  {% if css_library %}
+  {% for css_library in css_libraries %}
     <link rel="stylesheet" href="{{ css_library }}">
-  {% endif %}
+  {% endfor %}
   <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url | cacheBuster }}">
 
   {# <!-- Fonts -->

@@ -207,7 +207,7 @@ pre[class*="language-"] {
   background-color: var(--body-font-color); }
 
 pre[class*="mermaid"] {
-  background-color: #fff; }
+  background-color: var(--white); }
 
 h1,
 h2,
