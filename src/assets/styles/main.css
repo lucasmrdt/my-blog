@@ -206,6 +206,9 @@ pre[class*="language-"] {
   padding: var(--space-lg-1);
   background-color: var(--body-font-color); }
 
+pre[class*="mermaid"] {
+  background-color: #fff; }
+
 h1,
 h2,
 h3,
