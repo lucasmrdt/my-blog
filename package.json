@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run eleventy:prod",
     "postbuild": "npm run postcss",
     "predev": "npm run sass:dev && npm run modernizr",
-    "dev": "concurrently 'npm run eleventy:dev' 'npm run sass:watch'",
+    "dev": "concurrently 'npm run eleventy:dev' 'npm run sass:watch' 'npm run notebooks:export-watch'",
     "start": "npm run dev",
     "debug": "DEBUG=* eleventy",
     "postcss": "postcss dist/assets/styles/main.css --replace",
@@ -20,6 +20,8 @@
     "scripts": "webpack --mode=production",
     "clean": "rimraf dist",
     "modernizr": "npx modernizr -c .modernizrrc.json -d src/assets/scripts/vendors/modernizr.min.js -u",
+    "notebooks:export": "./notebooks/export.sh",
+    "notebooks:export-watch": "./notebooks/export.sh --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -71,6 +73,9 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
+    "markdown-it-find-and-replace": "^1.0.2",
+    "markdown-it-replace-it": "^1.0.0",
+    "markdown-it-replacements": "^1.0.2",
     "mermaid": "^8.13.3"
   }
 }

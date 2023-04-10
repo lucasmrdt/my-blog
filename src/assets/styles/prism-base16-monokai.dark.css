@@ -1,102 +1,150 @@
 code[class*="language-"],
 pre[class*="language-"] {
-  background: #272822;
-  color: #f8f8f2;
-  font-size: 14px;
-  line-height: 1.375;
+  color: #eee;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1em;
+  line-height: 1.5em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
-  direction: ltr;
   word-break: normal;
-  tab-size: 2;
+  word-wrap: normal;
+  tab-size: 4;
   hyphens: none; }
 
-pre[class*="language-"] {
-  margin: 0.5em 0;
-  padding: 1.5em 0;
-  overflow: auto; }
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"] ::selection {
+  background: #363636; }
 
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
-  border-radius: 0.3em; }
+  border-radius: 0.2em;
+  white-space: normal; }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #75715e; }
+pre[class*="language-"] {
+  position: relative;
+  margin: 0.5em 0;
+  padding: 1.25em 1em;
+  overflow: auto; }
 
-.token.punctuation {
-  color: #f8f8f2; }
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+  color: #fd9170; }
 
-.token.namespace {
+[class*="language-"] .namespace {
   opacity: 0.7; }
 
-.token.operator,
-.token.boolean,
-.token.number {
-  color: #fd971f; }
-
-.token.property {
-  color: #f4bf75; }
-
-.token.tag {
-  color: #66d9ef; }
-
-.token.string {
-  color: #a1efe4; }
-
-.token.selector {
-  color: #ae81ff; }
+.token.atrule {
+  color: #c792ea; }
 
 .token.attr-name {
-  color: #fd971f; }
+  color: #ffcb6b; }
 
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: #a1efe4; }
+.token.attr-value {
+  color: #a5e844; }
 
-.token.attr-value,
-.token.keyword,
-.token.control,
-.token.directive,
-.token.unit {
-  color: #a6e22e; }
+.token.attribute {
+  color: #a5e844; }
 
-.token.statement,
-.token.regex,
-.token.atrule {
-  color: #a1efe4; }
+.token.boolean {
+  color: #c792ea; }
 
-.token.placeholder,
-.token.variable {
-  color: #66d9ef; }
+.token.builtin {
+  color: #ffcb6b; }
+
+.token.cdata {
+  color: #80cbc4; }
+
+.token.char {
+  color: #80cbc4; }
+
+.token.class {
+  color: #ffcb6b; }
+
+.token.class-name {
+  color: #f2ff00; }
+
+.token.comment {
+  color: #616161; }
+
+.token.constant {
+  color: #c792ea; }
 
 .token.deleted {
-  text-decoration: line-through; }
+  color: #f66; }
 
-.token.inserted {
-  border-bottom: 1px dotted #f9f8f5;
-  text-decoration: none; }
+.token.doctype {
+  color: #616161; }
 
-.token.italic {
-  font-style: italic; }
+.token.entity {
+  color: #f66; }
 
-.token.important,
-.token.bold {
+.token.function {
+  color: #c792ea; }
+
+.token.hexcode {
+  color: #f2ff00; }
+
+.token.id {
+  color: #c792ea;
   font-weight: bold; }
 
 .token.important {
-  color: #f92672; }
+  color: #c792ea;
+  font-weight: bold; }
 
-.token.entity {
-  cursor: help; }
+.token.inserted {
+  color: #80cbc4; }
 
-pre > code.highlight {
-  outline: 0.4em solid #f92672;
-  outline-offset: 0.4em; }
+.token.keyword {
+  color: #c792ea; }
+
+.token.number {
+  color: #fd9170; }
+
+.token.operator {
+  color: #89ddff; }
+
+.token.prolog {
+  color: #616161; }
+
+.token.property {
+  color: #80cbc4; }
+
+.token.pseudo-class {
+  color: #a5e844; }
+
+.token.pseudo-element {
+  color: #a5e844; }
+
+.token.punctuation {
+  color: #89ddff; }
+
+.token.regex {
+  color: #f2ff00; }
+
+.token.selector {
+  color: #f66; }
+
+.token.string {
+  color: #a5e844; }
+
+.token.symbol {
+  color: #c792ea; }
+
+.token.tag {
+  color: #f66; }
+
+.token.unit {
+  color: #fd9170; }
+
+.token.url {
+  color: #f66; }
+
+.token.variable {
+  color: #f66; }
 
 /*# sourceMappingURL=prism-base16-monokai.dark.css.map */

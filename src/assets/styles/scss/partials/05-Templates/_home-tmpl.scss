@@ -10,15 +10,15 @@
   }
 }
 
-.gradient-home {
-  background-image: url("/assets/images/mesh-gradient-white.webp");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+// .gradient-home {
+//   background-image: url("/assets/images/mesh-gradient-white.webp");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
 
-/*! purgecss ignore */
-.no-webp .gradient-home {
-  background-image: url("/assets/images/mesh-gradient-white.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+// /*! purgecss ignore */
+// .no-webp .gradient-home {
+//   background-image: url("/assets/images/mesh-gradient-white.jpg");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }

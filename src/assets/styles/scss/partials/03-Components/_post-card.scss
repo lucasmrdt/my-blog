@@ -40,7 +40,8 @@
 .post-card__image {
   display: flex;
   height: 10rem;
-  filter: grayscale(1) brightness(1);
+
+  // filter: grayscale(1) brightness(1);
 
   img {
     width: 100%;

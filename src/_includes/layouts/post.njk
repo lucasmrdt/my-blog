@@ -29,7 +29,7 @@
         {# https://stackoverflow.com/questions/66261187/11ty-how-to-display-post-tags-in-my-post-njk-file #}
         <ul class="tag__items display-flex">
           {% for tag in tags -%}
-            {% if tag !== 'posts' %}
+            {% if tag !== 'notebooks' %}
               {% set tagUrl %}/tags/{{ tag }}/{% endset %}
               <li class="tag__item">
                 <a class="tag__link" href="{{ tagUrl | url }}">#{{ tag }}</a>
@@ -51,14 +51,14 @@
       <hr>
     {% endif %}
 
-    <div class="post__content columns-2">
+    <div class="post__content columns-1">
       {{ content | safe }}
     </div>
 
     <footer class="post__footer">
       <hr>
       <ul class="post__next-prev">
-        {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+        {%- set nextPost = collections.notebooks | getNextCollectionItem(page) %}
         {%- if nextPost %}
           <li class="post__next">
             <span class="post__next--label">
@@ -76,7 +76,7 @@
             </a>
           </li>
         {% endif %}
-        {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+        {%- set previousPost = collections.notebooks | getPreviousCollectionItem(page) %}
         {%- if previousPost %}
           <li class="post__prev{%- if not nextPost %} ml-md-auto{% endif %}">
             <span class="post__prev--label">
@@ -101,7 +101,7 @@
 {% endblock %}
 
 {% block js %}
-  {% if page.url === '/posts/mermaid_test/' %}
+  {% if page.url === '/notebooks/mermaid_test/' %}
     <script src="{{ '/assets/scripts/vendors/mermaid.min.js' | url }}"></script>
     <script>
       mermaid.initialize({startOnLoad: true});

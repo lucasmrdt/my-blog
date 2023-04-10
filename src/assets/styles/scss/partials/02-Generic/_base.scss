@@ -13,6 +13,11 @@ html {
   color: var(--body-font-color);
 }
 
+mark {
+  background-color: var(--yellow);
+  color: var(--body-font-color);
+}
+
 body {
   width: 100vw;
   background-color: var(--body-background);
@@ -124,11 +129,15 @@ pre[class*="language-"] {
 
   //To avoid overflow in small devices
   max-width: calc(100vw - var(--space-lg-3));
-  margin: var(--space-lg-1) var(--space-0);
+  margin: 0;
+
+  // padding: 0;
+  // margin: var(--space-lg-1) var(--space-0);
 
   //Fix issue with prism
   padding: var(--space-lg-1);
   background-color: var(--body-font-color);
+  font-size: var(--font-size-sm);
 }
 
 pre[class*="mermaid"] {

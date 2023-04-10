@@ -87,11 +87,11 @@
 .footer__link {
   @extend %underline-dashed;
 
-  padding: var(--space-sm-6) var(--space-sm-6) var(--space-sm-6) var(--space-sm-2);
+  // padding: var(--space-sm-6);
 
-  @include media-query(md) {
-    padding: var(--space-sm-2);
-  }
+  // @include media-query(md) {
+  //   padding: var(--space-sm-2);
+  // }
 }
 
 .footer__social-items {

@@ -14,12 +14,13 @@
   }
 
   img {
-    filter: grayscale(1) brightness(0.8) contrast(1.2);
+    // filter: grayscale(1) brightness(0.8) contrast(1.2);
   }
 
   pre[class*="language-"] {
     margin-top: var(--space-lg-2);
-    border: var(--border-width-thin) solid var(--white);
+
+    // border: var(--border-width-thin) solid var(--white);
     background-color: var(--body-background);
   }
 
@@ -69,7 +70,8 @@
 
     pre[class*="language-"] {
       margin-top: var(--space-lg-1);
-      border: var(--border-width-thin) solid var(--black);
+
+      // border: var(--border-width-thin) solid var(--black);
       background-color: var(--body-font-color);
     }
 

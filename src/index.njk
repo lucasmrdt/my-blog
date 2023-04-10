@@ -6,20 +6,19 @@ eleventyNavigation:
 
 {% extends 'layouts/home.njk' %}
 {% if bodyClass is not defined %}
-  {% set bodyClass = 'gradient-home' %}
+  {% set bodyClass = '' %}
 {% endif %}
 {% block content %}
   <section class="hero">
-    <h1>{{ home.h1 }}</h1>
+    <h1>{{ home.h1 | safe }}</h1>
     <p class="lead h3">{{ home.lead }}</p>
   </section>
-  {% set maxPosts = collections.posts.length | min(3) %}
-  <h2>Latest
-    {% if maxPosts == 1 %}post{% else %}posts{% endif %}
+  <h2>📖 Latest
+    {% if collections.notebooks.length == 1 %}notebook{% else %}notebooks{% endif %}
   </h2>
-  {% set postslist = collections.posts | head(-3) | reverse %}
-  {% set postslistCounter = collections.posts | length %}
+  {% set postslist = collections.notebooks | head(-6) | reverse %}
   {% include "layouts/partials/posts-list.njk" %}
-  <p>More posts can be found in the
-    <a class="underline-dashed" href="{{ '/posts/' | url }}">blog</a>.</p>
+
+  <p>More notebooks can be found at
+    <a class="underline-dashed" href="{{ '/notebooks/' | url }}">notebook</a>.</p>
 {% endblock %}

@@ -1,17 +1,18 @@
 module.exports = (collection) => {
   let tagSet = new Set();
-  collection.getAll().forEach(function(item) {
-    if( "tags" in item.data ) {
+  collection.getAll().forEach(function (item) {
+    if ("tags" in item.data) {
       let tags = item.data.tags;
 
-      tags = tags.filter(function(item) {
-        switch(item) {
+      tags = tags.filter(function (item) {
+        switch (item) {
           // this list should match the `filter` list in tags.njk
           case "all":
           case "nav":
           case "post":
           case "posts":
           case "tagList":
+          case "notebooks":
             return false;
         }
 
@@ -27,4 +28,3 @@ module.exports = (collection) => {
   // returning an array in addCollection works in Eleventy 0.5.3
   return [...tagSet];
 };
-

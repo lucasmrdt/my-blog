@@ -1,10 +1,10 @@
 {
-  "title": "Yetty",
+  "title": "Lucas Marandat",
   "url": "https://yetty.netlify.app",
-  "description": "Yet another Eleventy starter kit for my (& your) new projects with accessibility and performance in mind.",
+  "description": "I believe that complex concepts are simply a combination of simple ideas, and that's why through my blog, I aim to share my understanding of such topics in a simplified and accessible manner.",
   "repo": "https://github.com/ygoex/yetty",
   "feed": {
-    "subtitle": "Yet another Eleventy starter kit for my (& your) new projects with accessibility and performance in mind.",
+    "subtitle": "I believe that complex concepts are simply a combination of simple ideas, and that's why through my blog, I aim to share my understanding of such topics in a simplified and accessible manner.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://yetty.netlify.app/"
@@ -14,15 +14,13 @@
     "url": "https://yetty.netlify.app/feed/feed.json"
   },
   "author": {
-    "name": "Yolanda Gorriz Exposito",
-    "email": "helloygoex@gmail.com",
-    "username": "ygoex",
-    "url": "https://yetty.netlify.app/about-me/",
-    "github": "https://github.com/ygoex",
-    "twitter": "https://twitter.com/ygoex",
-    "codepen": "https://codepen.io/ygoex",
-    "dribbble": "https://dribbble.com/ygoex",
-    "behance": "https://www.behance.net/ygoex",
-    "linkedin": "https://www.linkedin.com/in/ygoex/"
+    "name": "Lucas Marandat",
+    "email": "lucas.mrdt+website@gmail.com",
+    "username": "lucasmrdt",
+    "url": "https://lucas-marandat.fr/about-me/",
+    "github": "https://github.com/lucasmrdt",
+    "codepen": "https://codesandbox.io/u/lucasmrdt",
+    "replit": "https://repl.it/@lucasmrdt",
+    "linkedin": "https://www.linkedin.com/in/lucasmrdt/"
   }
 }

@@ -57,12 +57,21 @@
   --footer-color: var(--grey-200);
 
   img {
-    filter: grayscale(1) brightness(0.8) contrast(1.2);
+    // filter: grayscale(1) brightness(0.8) contrast(1.2);
+  }
+
+  mark {
+    background-color: var(--yellow-a);
+  }
+
+  ::selection {
+    background-color: var(--yellow-a);
   }
 
   pre[class*="language-"] {
     margin-top: var(--space-lg-2);
-    border: var(--border-width-thin) solid var(--white);
+
+    // border: var(--border-width-thin) solid var(--white);
     background-color: var(--body-background);
   }
 
@@ -92,4 +101,16 @@
   background-image: url("/assets/images/mesh-gradient-black.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.katex-block {
+  width: 90vw;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+pre:not([class*="language-"]) {
+  width: 90vw;
+  max-width: var(--line-length);
+  overflow-x: scroll;
 }

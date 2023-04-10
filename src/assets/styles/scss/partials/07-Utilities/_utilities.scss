@@ -47,6 +47,13 @@
   }
 }
 
+.columns-1 {
+  @include media-query(sm) {
+    max-width: none;
+    columns: 1;
+  }
+}
+
 .sr-only,
 .visually-hidden {
   position: absolute;
