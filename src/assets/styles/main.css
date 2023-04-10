@@ -119,11 +119,11 @@ html {
   scroll-behavior: smooth; }
 
 ::selection {
-  background-color: var(--yellow);
+  background-color: var(--yellow-a);
   color: var(--body-font-color); }
 
 mark {
-  background-color: var(--yellow);
+  background-color: var(--yellow-a);
   color: var(--body-font-color); }
 
 body {
