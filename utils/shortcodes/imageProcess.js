@@ -1,7 +1,7 @@
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
-const developmentFormats = ["png", "jpeg"];
-const productionFormats = ["avif", "webp", "jpeg"];
+const developmentFormats = ["png", "jpeg", "gif"];
+const productionFormats = ["avif", "webp", "jpeg", "gif"];
 
 async function imageShortcode(
   src,
@@ -16,9 +16,37 @@ async function imageShortcode(
     // We throw an error on missing alt (alt="" works okay for decorative images)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
+  const extension = path.extname(src);
+  if (extension === ".gif") {
+    let metadata = await Image(src, {
+      widths: ["auto"],
+      formats: ["gif"],
+      urlPath: "/assets/images/",
+      outputDir: "./dist/assets/images/",
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+        return `${name}.${format}`;
+      },
+      sharpOptions: {
+        animated: true,
+      },
+    });
+    return `<figure class="${pictureClass}" style="--banner-border-color: ${bannerBorderColor}"><img
+      class="${cssClass}"
+      src="${metadata.gif[0].url}"
+      alt="${alt}"
+      loading="lazy"
+      decoding="async">
+    ${
+      caption && cssClass === "img-post"
+        ? `<figcaption>${caption}</figcaption>`
+        : ""
+    }
+  </figure>`;
+  }
   let metadata = await Image(src, {
     sharpJpegOptions: {},
-    // widths: ["auto"],
     widths: [480, 960, 1440],
     /**
      * The eleventy-img plugin takes a while to work,
@@ -49,6 +77,9 @@ async function imageShortcode(
       const name = path.basename(src, extension);
       return `${name}-${width}.${format}`;
     },
+    // sharpOptions: {
+    //   animated: true,
+    // },
   });
   //Take the smaller image to be used in the img tag
   let lowsrc = metadata.jpeg[0];
