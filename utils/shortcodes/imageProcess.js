@@ -1,7 +1,7 @@
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
-const developmentFormats = ["png", "jpeg", "gif"];
-const productionFormats = ["avif", "webp", "jpeg", "gif"];
+const developmentFormats = ["png", "jpeg"];
+const productionFormats = ["avif", "webp", "jpeg"];
 
 async function imageShortcode(
   src,
@@ -45,9 +45,35 @@ async function imageShortcode(
     }
   </figure>`;
   }
+  if (extension === ".svg") {
+    let metadata = await Image(src, {
+      widths: ["auto"],
+      formats: ["svg"],
+      urlPath: "/assets/images/",
+      outputDir: "./dist/assets/images/",
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+        return `${name}.${format}`;
+      },
+    });
+    return `<figure class="${pictureClass}" style="--banner-border-color: ${bannerBorderColor}"><img
+      class="${cssClass}"
+      src="${metadata.svg[0].url}"
+      alt="${alt}"
+      loading="lazy"
+      decoding="async"
+      style="padding: 10px;background-color: #fff;">
+    ${
+      caption && cssClass === "img-post"
+        ? `<figcaption>${caption}</figcaption>`
+        : ""
+    }
+  </figure>`;
+  }
   let metadata = await Image(src, {
     sharpJpegOptions: {},
-    widths: [480, 960, 1440],
+    widths: [960, 1440],
     /**
      * The eleventy-img plugin takes a while to work,
      * so let's skip all that image processing in development.

@@ -206,6 +206,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets/images");
   eleventyConfig.addPassthroughCopy("./src/notebooks/*.png");
   eleventyConfig.addPassthroughCopy("./src/notebooks/*.gif");
+  eleventyConfig.addPassthroughCopy("./src/notebooks/*.svg");
   eleventyConfig.addPassthroughCopy("./src/assets/styles/*.css");
   eleventyConfig.addPassthroughCopy({
     "node_modules/mermaid/dist/mermaid.min.js":

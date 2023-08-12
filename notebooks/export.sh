@@ -26,6 +26,8 @@ export-nb-to-md() {
   cp $INPUT_DIR/**/*.gif $OUTPUT_DIR
   jupyter nbconvert $INPUT_DIR/**/*.ipynb --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags remove_cell --TagRemovePreprocessor.remove_all_outputs_tags remove_output --TagRemovePreprocessor.remove_input_tags remove_input --to markdown --output-dir $OUTPUT_DIR
   $gsed_cmd -i 's/!\[png\](\(.*\))/{% imageMd ".\/src\/notebooks\/.\/\1", "", "", "img-container grid-column-center", "img-post", "", "" %}/gm' $OUTPUT_DIR/*.md
+  $gsed_cmd -i 's/!\[svg\](\(.*\))/{% imageMd ".\/src\/notebooks\/.\/\1", "", "", "img-container grid-column-center", "img-post", "", "" %}/gm' $OUTPUT_DIR/*.md
+  $gsed_cmd -i 's/!\[gif\](\(.*\))/{% imageMd ".\/src\/notebooks\/.\/\1", "", "", "img-container grid-column-center", "img-post", "", "" %}/gm' $OUTPUT_DIR/*.md
   echo "Done."
 }
 

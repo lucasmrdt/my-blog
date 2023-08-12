@@ -4,7 +4,7 @@ module.exports = function imgSize(src, size = "960", format = "jpeg") {
   const extension = path.extname(src);
   const name = path.basename(src, extension);
   const dirname = "/assets/images/";
-  if (extension === ".gif") {
+  if (extension === ".gif" || extension === ".svg") {
     return `${dirname}${name}${extension}`;
   }
   /**
